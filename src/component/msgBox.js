@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import {Box, Typography, Tab, Tabs, Paper, AppBar, Button} from "@material-ui/core";
+import {Box, Typography, Tab, Tabs, Paper, AppBar, Button, Card, CardContent, Grid} from "@material-ui/core";
 import theme from "../JizzTheme.js";
 
+import InputBox from "./inputBox.js";
 const useStyles = makeStyles(({theme})=> ({
     msgList:{
         "list-style-type": "none"
@@ -13,9 +14,11 @@ const useStyles = makeStyles(({theme})=> ({
 
 const ChatBox = ({children}) => {
     return (
-        <Box>
-            <Typography>{children}</Typography>
-        </Box>
+        <Card>
+            <CardContent>
+                <Typography color="primary">{children}</Typography>
+            </CardContent>
+        </Card>
     );
 }
 
@@ -26,13 +29,29 @@ const MsgBox = () => {
     };
     const massages = data.msgs.map((text,index)=>{
         console.log(index)
-        return <li key={index}><ChatBox>{text}</ChatBox></li>;
+        return (
+            <Grid item>
+            <li key={index}><ChatBox>{text}</ChatBox></li>
+            </Grid>
+        );
     })
     return (
         <Paper variant="outlined">
             <ul className={classes.msgList}>
+            <Grid
+                container
+                direction="column"
+                justify="space-around"
+                spacing={1}
+            >
                 {massages}
+            </Grid>
             </ul>
+            <Grid container alignContent="flex-end">
+                <Grid item>
+                    <InputBox />
+                </Grid>
+            </Grid>
         </Paper>
     ) 
 };

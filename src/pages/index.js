@@ -1,5 +1,5 @@
 import React from "react"
-import Grid from '@material-ui/core/Grid';
+import {Grid, Container} from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
@@ -12,11 +12,12 @@ const MainPage = () => (
         container
         direction="row"
         justify="center"
+        alignItems="stretch"
     >
-        <Grid item container md={3} xs={3}>
+        <Grid item container alignItems="stretch" xs={3}>
             <SideTab />
         </Grid>
-        <Grid item container sm={9} xs={9}>
+        <Grid item container alignItems="stretch" xs={9}>
             <SideBox />
         </Grid>
     </Grid>
