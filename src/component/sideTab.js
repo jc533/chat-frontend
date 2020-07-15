@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, Tab, Tabs, Paper, AppBar, Button } from "@material-ui/core";
 import theme from "../JizzTheme.js";
 
+import DorpdownMenu from "./dropdownMenu.js";
 // const useStyles = makeStyles((theme) => ({
 //     sideBox: {
 //         width: "100%"
@@ -68,10 +69,11 @@ export default function SimpleTabs() {
                 <AppBar position="static">
                     <Typography variant="h6">
                         聊天室
-                </Typography>
+                    </Typography>
+                    <DorpdownMenu />
                     <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                        <Tab label="新增朋友" {...a11yProps(0)} />
-                        <Tab label="建立群組" {...a11yProps(1)} />
+                        <Tab label="朋友" {...a11yProps(0)} />
+                        <Tab label="訊息" {...a11yProps(1)} />
                     </Tabs>
                 </AppBar>
                 <TabPanel value={value} index={0}>

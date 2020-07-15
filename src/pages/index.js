@@ -12,7 +12,7 @@ const MainPage = () => (
         container
         direction="row"
         justify="center"
-        alignItems="stretch"
+        // alignItems="stretch"
     >
         <Grid item container alignItems="stretch" xs={3}>
             <SideTab />

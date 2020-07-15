@@ -31,12 +31,13 @@ const MsgBox = () => {
         console.log(index)
         return (
             <Grid item>
-            <li key={index}><ChatBox>{text}</ChatBox></li>
+                <li key={index}><ChatBox>{text}</ChatBox></li>
             </Grid>
         );
     })
     return (
         <Paper variant="outlined">
+            <Grid>
             <ul className={classes.msgList}>
             <Grid
                 container
@@ -47,10 +48,9 @@ const MsgBox = () => {
                 {massages}
             </Grid>
             </ul>
-            <Grid container alignContent="flex-end">
-                <Grid item>
-                    <InputBox />
-                </Grid>
+            <Grid item alignContent="flex-end">
+                <InputBox />
+            </Grid>
             </Grid>
         </Paper>
     ) 
